@@ -14,7 +14,7 @@ class PDFTableReaderCombined(PDFTableReader):
             strip_text="\n"
         )
         for table in lattice_tables:
-            if self._is_valid_table(table):   # ✅ filter lattice too
+            if self._is_valid_table(table):  
                 doc = self._dataframe_to_document(df=table.df, extra_info=extra_info)
                 results.append(doc)
 
@@ -25,7 +25,7 @@ class PDFTableReaderCombined(PDFTableReader):
             strip_text="\n"
         )
         for table in stream_tables:
-            if self._is_valid_table(table):   # ✅ already filtering
+            if self._is_valid_table(table):  
                 doc = self._dataframe_to_document(df=table.df, extra_info=extra_info)
                 results.append(doc)
 
@@ -91,3 +91,4 @@ with out_file.open("w", encoding="utf-8") as f:
 
 print(f"  Saved results to {out_file}")
 print("Done.")
+
